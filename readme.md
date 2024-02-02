@@ -3,23 +3,18 @@
 ![Table](./table.png)
 ![Chart](./chart.png)
 
-## Comparison between KMP and Boyer-Moore:
+## KMP Algorithm
 
-Pattern "Літерату": KMP and Boyer-Moore algorithms show similar performance, but KMP appears to be slightly faster.
-Pattern "теорії": Similarly, there is a similar performance between KMP and Boyer-Moore, with KMP being slightly faster.
+This algorithm generally shows consistent performance regardless of the patterns. The times when the pattern is found and not found are quite close to each other. This indicates that the KMP algorithm exhibits stable performance.
 
-## Comparison between KMP and Rabin-Karp:
+## Boyer-Moore Algorithm:
 
-Pattern "Літерату": KMP outperforms Rabin-Karp in terms of speed.
-Pattern "теорії": KMP also outperforms Rabin-Karp when searching for the "теорії" pattern.
+This algorithm provides quicker results than the others, especially when the pattern is not found in the text. This suggests that the Boyer-Moore algorithm is extremely effective when the pattern is not present in the text. On the other hand, it is also the fastest among the algorithms when the pattern is found.
 
-## Comparison between Boyer-Moore and Rabin-Karp:
+## Rabin-Karp Algorithm
 
-Pattern "Літерату": Boyer-Moore is faster than Rabin-Karp when searching for the "Літерату" pattern.
-Pattern "теорії": Boyer-Moore is faster than Rabin-Karp when searching for the "теорії" pattern.
+Rabin-Karp is the slowest in most of the tested cases. This is more noticeable especially when the pattern is not found. This situation indicates that the Rabin-Karp algorithm is suitable for specific situations (like when multiple patterns are checked simultaneously).
 
-### In summary:
+## Summary
 
-The KMP algorithm is generally the fastest option for searching for the given patterns in the specified texts.
-The Boyer-Moore algorithm performs similarly to KMP and is faster than Rabin-Karp.
-The Rabin-Karp algorithm appears to be slower in these specific scenarios.
+Based on this information, if you have a use case where the searched pattern is often not found in the text, the Boyer-Moore algorithm might be the best option. If overall performance is important and the distribution of finding or not finding the pattern in the text is balanced, then the KMP algorithm could be preferred. It's important to remember that Rabin-Karp generally performs slower than the other two algorithms, except in specific circumstances.

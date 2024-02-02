@@ -136,7 +136,7 @@ texts = []
 for file_path in file_paths:
     with open(file_path, 'r', encoding='utf-8') as file:
         text = file.read()
-        patterns = ["Літерату", "теорії"]
+        patterns = ["Літерату", "теорії", "YOUCANTFINDME"]
         for pattern in patterns:
             texts.append((text, pattern))
 
@@ -145,7 +145,7 @@ def measure_search_time(search_function, text, pattern):
     setup_code = f"from __main__ import {search_function.__name__} as search_func"
     test_code = f"search_func('''{text}''', '''{pattern}''')"
     times = timeit.repeat(
-        setup=setup_code, stmt=test_code, repeat=3, number=100)
+        setup=setup_code, stmt=test_code, repeat=1, number=1)
     return min(times) / 100
 
 
